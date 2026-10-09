@@ -14,3 +14,42 @@ if (toggle && nav) {
     });
   });
 }
+
+let currentButton = null;
+let currentAudio = null;
+
+function stopCurrent() {
+  if (!currentAudio) return;
+  currentAudio.pause();
+  currentAudio.currentTime = 0;
+  if (currentButton) {
+    currentButton.textContent = "Play sound";
+    currentButton.setAttribute("aria-pressed", "false");
+  }
+  currentButton = null;
+  currentAudio = null;
+}
+
+document.querySelectorAll(".play").forEach(function (button) {
+  const audio = new Audio(button.dataset.src);
+
+  button.addEventListener("click", function () {
+    if (currentButton === button && currentAudio && !currentAudio.paused) {
+      stopCurrent();
+      return;
+    }
+    stopCurrent();
+    currentButton = button;
+    currentAudio = audio;
+    button.textContent = "Stop";
+    button.setAttribute("aria-pressed", "true");
+    audio.play().catch(function () {
+      button.textContent = "Play sound";
+      button.setAttribute("aria-pressed", "false");
+    });
+  });
+
+  audio.addEventListener("ended", function () {
+    if (currentButton === button) stopCurrent();
+  });
+});

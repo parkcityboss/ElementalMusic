@@ -259,11 +259,31 @@ h1 {
   border-radius: 12px;
 }
 
-.instrument figcaption {
+.instrument figcaption,
+.sound-credit {
   margin-top: 0.45rem;
   color: var(--ink-soft);
   font-size: 0.78rem;
   line-height: 1.4;
+}
+
+.play {
+  display: block;
+  width: 100%;
+  margin-top: 0.65rem;
+  border: 1px solid var(--brass);
+  background: transparent;
+  color: var(--brass);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.play[aria-pressed="true"] {
+  background: var(--brass);
+  color: #1b140f;
 }
 
 .instrument h2 {
