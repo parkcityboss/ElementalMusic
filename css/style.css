@@ -1,15 +1,15 @@
 :root {
-  --ink: #1b140f;
-  --ink-soft: #4e3d33;
-  --paper: #f4efe6;
-  --card: #fffaf3;
-  --brass: #a67c2d;
-  --line: #e3d5c2;
-  --red: #8d2c32;
-  --green: #1f4a3c;
-  --shadow: 0 16px 40px rgba(40, 24, 10, 0.08);
+  --ink: #f4efe6;
+  --ink-soft: #cbbba8;
+  --paper: #12100e;
+  --card: #1e1916;
+  --brass: #e0c07a;
+  --line: #3a322b;
+  --header: #0c0a09;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme: dark;
 }
 
 * {
@@ -38,14 +38,15 @@ a {
 }
 
 a:hover {
-  color: var(--ink);
+  color: #fff6e4;
 }
 
 .skip {
   position: absolute;
   left: 1rem;
   top: -4rem;
-  background: white;
+  background: var(--card);
+  color: var(--ink);
   padding: 0.5rem 0.8rem;
   z-index: 10;
 }
@@ -63,8 +64,8 @@ a:hover {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 6vw;
-  background: var(--ink);
-  color: #f6efe4;
+  background: var(--header);
+  color: var(--ink);
 }
 
 .logo {
@@ -149,21 +150,21 @@ h1 {
 .button {
   display: inline-block;
   text-decoration: none;
-  background: var(--ink);
-  color: #f6efe4;
+  background: var(--brass);
+  color: #1b140f;
   padding: 0.65rem 1rem;
   border-radius: 999px;
 }
 
 .button:hover {
-  background: var(--brass);
-  color: var(--ink);
+  background: #f0d9a0;
+  color: #1b140f;
 }
 
 .button.light {
   background: transparent;
   color: var(--ink);
-  border: 1px solid var(--ink);
+  border: 1px solid var(--line);
 }
 
 .families {
@@ -189,7 +190,7 @@ h1 {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  background: #f7f3eb;
+  background: #2a241f;
 }
 
 .family div {
@@ -255,7 +256,7 @@ h1 {
   max-height: 280px;
   margin: 0 auto;
   object-fit: contain;
-  background: #f7f3eb;
+  background: #2a241f;
   border-radius: 12px;
 }
 
@@ -275,7 +276,7 @@ h1 {
   margin-top: 1rem;
   padding: 0.8rem 1rem;
   border-left: 4px solid var(--brass);
-  background: #f7f1e4;
+  background: #2a231c;
 }
 
 .sound h3 {
@@ -346,7 +347,7 @@ h1 {
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: var(--ink);
+    background: var(--header);
     padding: 0.4rem 6vw 1rem;
   }
 
